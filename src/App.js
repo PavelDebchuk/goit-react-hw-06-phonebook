@@ -5,7 +5,7 @@ import Filter from './components/Filter';
 
 const App = () => {
   return (
-    <section className={s.phonebook}>
+    <section className={s.phonebookSection}>
       <Phonebook />
       <Filter />
       <Contacts />

@@ -1,3 +1,5 @@
+import { BsFillTelephonePlusFill } from 'react-icons/bs';
+import { IconContext } from 'react-icons';
 import s from './Phonebook.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -42,8 +44,19 @@ export default function Phonebook() {
   };
 
   return (
-    <section className="block">
-      <h2 className={s.phonebookTitle}>Phonebook</h2>
+    <>
+      <h2 className={s.phonebookTitle}>
+        Phonebook
+        <IconContext.Provider
+          value={{
+            color: 'rgb(198, 131, 204)',
+            size: '25px',
+            style: { margin: '0 0 0 15px' },
+          }}
+        >
+          <BsFillTelephonePlusFill />
+        </IconContext.Provider>
+      </h2>
       <form className={s.phonebookForm} onSubmit={formSubmit}>
         <div className={s.inputBox}>
           {' '}
@@ -78,6 +91,6 @@ export default function Phonebook() {
           </button>
         </div>
       </form>
-    </section>
+    </>
   );
 }
